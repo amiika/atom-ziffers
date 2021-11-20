@@ -1,8 +1,8 @@
 {
-  "name": "atom-sonic",
-  "main": "./lib/atom-sonic",
-  "version": "0.3.2",
-  "description": "Sonic Pi Atom integration",
+  "name": "atom-ziffers",
+  "main": "./lib/atom-ziffers",
+  "version": "0.0.1",
+  "description": "Ziffers Atom integration",
   "keywords": [],
   "providedServices": {
     "autocomplete.provider": {
@@ -11,12 +11,12 @@
       }
     }
   },
-  "repository": "https://github.com/rkh/atom-sonic",
+  "repository": "https://github.com/amiika/atom-ziffers",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "node-osc": "^1.1.0"
+    "node-osc": "^1.2.0"
   }
 }

@@ -19,7 +19,7 @@ module.exports = AtomSonic =
   play: (selector) ->
     editor = atom.workspace.getActiveTextEditor()
     source = editor[selector]()
-    @send '/run-code', '0', source
+    @send '/run-ziffers', 'Ziffers', source
     atom.notifications.addSuccess "Sent source code to Sonic Pi."
 
   stop: ->
@@ -27,5 +27,5 @@ module.exports = AtomSonic =
     atom.notifications.addInfo "Told Sonic Pi to stop playing."
 
   send: (args...) ->
-    client = new osc.Client('localhost', 4557)
+    client = new osc.Client('localhost', 4560)
     client.send args..., -> client.kill()
