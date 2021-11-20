@@ -1,17 +1,17 @@
 {CompositeDisposable} = require 'atom'
 osc                   = require 'node-osc'
-provider              = require './atom-sonic-autocomplete'
+provider              = require './atom-ziffers-autocomplete'
 
-module.exports = AtomSonic =
+module.exports = AtomZiffers =
   subscriptions: null
   provide: -> provider
 
   activate: (state) ->
     @subscriptions = new CompositeDisposable
     @subscriptions.add(atom.commands.add 'atom-workspace',
-      'atom-sonic:play-file':      => @play('getText'),
-      'atom-sonic:play-selection': => @play('getSelectedText'),
-      'atom-sonic:stop':           => @stop())
+      'atom-ziffers:play-file':      => @play('getText'),
+      'atom-ziffers:play-selection': => @play('getSelectedText'),
+      'atom-ziffers:stop':           => @stop())
 
   deactivate: ->
     @subscriptions.dispose()

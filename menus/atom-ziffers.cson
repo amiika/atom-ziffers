@@ -3,19 +3,19 @@
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'Sonic Pi'
+      'label': 'Ziffers'
       'submenu': [
         {
           'label': 'Play File'
-          'command': 'atom-sonic:play-file'
+          'command': 'atom-ziffers:play-file'
         },
         {
           'label': 'Play Selection'
-          'command': 'atom-sonic:play-selection'
+          'command': 'atom-ziffers:play-selection'
         },
         {
           'label': 'Stop Playing'
-          'command': 'atom-sonic:stop'
+          'command': 'atom-ziffers:stop'
         }
       ]
     ]

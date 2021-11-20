@@ -1,40 +1,40 @@
-AtomSonic = require '../lib/atom-sonic'
+AtomZiffers = require '../lib/atom-ziffers'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
 # To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe "AtomSonic", ->
+describe "AtomZiffers", ->
   [workspaceElement, activationPromise] = []
 
   beforeEach ->
     workspaceElement = atom.views.getView(atom.workspace)
-    activationPromise = atom.packages.activatePackage('atom-sonic')
+    activationPromise = atom.packages.activatePackage('atom-ziffers')
 
-  describe "when the atom-sonic:toggle event is triggered", ->
+  describe "when the atom-ziffers:toggle event is triggered", ->
     it "hides and shows the modal panel", ->
       # Before the activation event the view is not on the DOM, and no panel
       # has been created
-      expect(workspaceElement.querySelector('.atom-sonic')).not.toExist()
+      expect(workspaceElement.querySelector('.atom-ziffers')).not.toExist()
 
       # This is an activation event, triggering it will cause the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'atom-sonic:toggle'
+      atom.commands.dispatch workspaceElement, 'atom-ziffers:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
-        expect(workspaceElement.querySelector('.atom-sonic')).toExist()
+        expect(workspaceElement.querySelector('.atom-ziffers')).toExist()
 
-        atomSonicElement = workspaceElement.querySelector('.atom-sonic')
-        expect(atomSonicElement).toExist()
+        atomZiffersElement = workspaceElement.querySelector('.atom-Ziffers')
+        expect(atomZiffersElement).toExist()
 
-        atomSonicPanel = atom.workspace.panelForItem(atomSonicElement)
-        expect(atomSonicPanel.isVisible()).toBe true
-        atom.commands.dispatch workspaceElement, 'atom-sonic:toggle'
-        expect(atomSonicPanel.isVisible()).toBe false
+        atomZiffersPanel = atom.workspace.panelForItem(atomZiffersElement)
+        expect(atomZiffersPanel.isVisible()).toBe true
+        atom.commands.dispatch workspaceElement, 'atom-ziffers:toggle'
+        expect(atomZiffersPanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
       # This test shows you an integration test testing at the view level.
@@ -45,18 +45,18 @@ describe "AtomSonic", ->
       # workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement)
 
-      expect(workspaceElement.querySelector('.atom-sonic')).not.toExist()
+      expect(workspaceElement.querySelector('.atom-ziffers')).not.toExist()
 
       # This is an activation event, triggering it causes the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'atom-sonic:toggle'
+      atom.commands.dispatch workspaceElement, 'atom-ziffers:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
         # Now we can test for view visibility
-        atomSonicElement = workspaceElement.querySelector('.atom-sonic')
-        expect(atomSonicElement).toBeVisible()
-        atom.commands.dispatch workspaceElement, 'atom-sonic:toggle'
-        expect(atomSonicElement).not.toBeVisible()
+        atomZiffersElement = workspaceElement.querySelector('.atom-ziffers')
+        expect(atomZiffersElement).toBeVisible()
+        atom.commands.dispatch workspaceElement, 'atom-ziffers:toggle'
+        expect(atomZiffersElement).not.toBeVisible()

@@ -1,11 +1,6 @@
-# Sonic Pi Atom integration
+# Ziffers (and Sonic Pi) Atom integration
 
 This plugin allows remote controlling [Sonic Pi](http://sonic-pi.net/) via [Atom](https://atom.io/).
-
-Sonic Pi is fun to play with, but its built-in editor is very rudimentary.
-With this plugin, you can do all the live coding in Atom instead.
-
-![sonic-pi-atom-screenshot](https://raw.githubusercontent.com/rkh/atom-sonic/master/screenshot.png)
 
 ## Requirements
 
@@ -15,6 +10,6 @@ Sonic Pi needs to be running in the background.
 
  Key Binding  | Action                      | Description
 --------------|-----------------------------|-----------------
- `ctrl-r`     | `atom-sonic:play-file`      | Sends content of the currently open buffer to Sonic Pi for instant playback
- `ctrl-alt-r` | `atom-sonic:play-selection` | Sends currently selected text to Sonic Pi for instant playback
- `ctrl-s`     | `atom-sonic:stop`           | Tells Sonic Pi to stop all playback
+ `alt-r`     | `atom-ziffers:play-file`      | Sends content of the currently open buffer to Sonic Pi for instant playback
+ `ctrl-alt-r` | `atom-ziffers:play-selection` | Sends currently selected text to Sonic Pi for instant playback
+ `alt-s`     | `atom-ziffers:stop`           | Tells Sonic Pi to stop all playback

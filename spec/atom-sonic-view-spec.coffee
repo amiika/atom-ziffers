@@ -1,5 +1,5 @@
-AtomSonicView = require '../lib/atom-sonic-view'
+AtomZiffersView = require '../lib/atom-ziffers-view'
 
-describe "AtomSonicView", ->
+describe "AtomZiffersView", ->
   it "has one valid test", ->
     expect("life").toBe "easy"
