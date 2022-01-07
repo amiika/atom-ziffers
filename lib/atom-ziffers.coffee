@@ -23,7 +23,7 @@ module.exports = AtomZiffers =
     atom.notifications.addSuccess "Sent source code to Sonic Pi."
 
   stop: ->
-    @send '/stop-all-jobs'
+    @send '/stop-all-jobs', 'Ziffers'
     atom.notifications.addInfo "Told Sonic Pi to stop playing."
 
   send: (args...) ->

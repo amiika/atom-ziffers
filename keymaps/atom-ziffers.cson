@@ -9,5 +9,5 @@
 # https://atom.io/docs/latest/behind-atom-keymaps-in-depth
 'atom-workspace':
   'alt-r': 'atom-ziffers:play-file'
-  'ctrl-alt-r': 'atom-ziffers:play-selection'
-  'alt-s': 'atom-ziffers:stop'
+  'alt-e': 'atom-ziffers:play-selection'
+  'alt-q': 'atom-ziffers:stop'

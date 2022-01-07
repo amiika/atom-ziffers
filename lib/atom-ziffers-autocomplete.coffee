@@ -5,6 +5,13 @@ module.exports = provider =
 
   completions:
 
+    key: [
+      "C","D","E","F","G","A","B"]
+
+    fader: ["linear","in_quad","out_quad","quad","in_cubic","cubic","in_quart","out_quart","quart",
+    "in_quint","out_quint","quint","in_sine","out_sine","sine","in_expo","out_expo","expo",
+    "in_circ","out_circ","circ","out_back","in_back","back","out_bounce","in_bounce","bounce"]
+
     scale: [
       "acem_asiran","acem_kurdi","acemli_rast","aeolian","aeolian1b","aeolian3s","aeolian7s",
       "ahirbhairav","augmented","augmented2","bartok","bayati","bayati_2","bayati_araban","bestenigar",
@@ -49,7 +56,8 @@ module.exports = provider =
       for type, list of @completions
         console.log("W: "+last_word)
         console.log("P: "+prefix)
-        for sample in list when ((last_word == type+":") && (prefix == ": :" || sample.substring(0, prefix.length) == prefix.substring(0)) || ((last_word && prefix == ": :") && type=="sample"))
-          suggestions.push
-            text: sample, type: 'snippet', rightLabel: "Sonic Pi #{type}"
-      resolve(suggestions)
+        if prefix.length>0
+          for sample in list when ((last_word == type+":" || last_word == type) && (prefix == " :" || prefix == ": :" || sample.substring(0, prefix.length) == prefix.substring(0)) || ((!["key:","scale:","fx:","fader:"].includes(last_word) && prefix == ": :") && type=="sample"))
+            suggestions.push
+              text: sample, type: 'snippet', rightLabel: "Sonic Pi #{type}"
+        resolve(suggestions)
